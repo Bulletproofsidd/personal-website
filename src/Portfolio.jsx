@@ -9,8 +9,8 @@ import {
    ============================================================ */
 const LINKS = {
   github: "https://github.com/Bulletproofsidd",
-  linkedin: "https://linkedin.com/in/your-profile", // <-- replace
-  email: "your-email@example.com",                  // <-- replace
+  linkedin: "https://www.linkedin.com/in/siddhesh-kulkarni-161107233/", // <-- replace
+  email: "siddheshtkulkarni55@gmail.com",                  // <-- replace
 };
 
 const STACK = [
@@ -39,8 +39,7 @@ const PROJECTS = [
     blurb:
       "An Android app that intervenes on doomscrolling using UsageStatsManager and a rule-based risk engine, backed by a Node/Express + Socket.io service. Roadmap includes a real-time web dashboard and group focus sessions.",
     stack: ["Android", "Node.js", "Express", "Socket.io", "MongoDB", "JWT"],
-    github: null,
-    live: null,
+    github: In-Progress,
   },
   {
     tag: "e-commerce",
@@ -48,8 +47,7 @@ const PROJECTS = [
     blurb:
       "A complete MERN storefront — auth, sessions, and password hashing built from scratch, product catalog and checkout flow wired end-to-end on MongoDB.",
     stack: ["React", "Node.js", "Express", "MongoDB", "JWT", "bcrypt"],
-    github: null,
-    live: null,
+    github: "https://github.com/Bulletproofsidd/furni-ecommerce",
   },
 ];
 
@@ -578,10 +576,10 @@ export default function Portfolio() {
           <div className="about-eyebrow" style={{ justifyContent: "center", display: "flex" }}>• CONNECT</div>
           <h2>Want to build something real-time together?</h2>
           <p>Startup roles, backend-heavy projects, or just talking systems design — my inbox is open.</p>
-          <a className="connect-email" href={`mailto:${LINKS.email}`}><Mail size={18} /> Email Me</a>
+          <a className="connect-email" href={`mailto:${siddheshtkulkarni55@gmail.com}`}><Mail size={18} /> Email Me</a>
           <div className="connect-row">
-            <a className="icon-btn" href={LINKS.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={17} /></a>
-            <a className="icon-btn" href={LINKS.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={17} /></a>
+            <a className="icon-btn" href={`https://github.com/Bulletproofsidd`} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={17} /></a>
+            <a className="icon-btn" href={`https://www.linkedin.com/in/siddhesh-kulkarni-161107233/`} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={17} /></a>
           </div>
         </div>
       </section>

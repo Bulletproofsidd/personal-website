@@ -9,8 +9,8 @@ import {
    ============================================================ */
 const LINKS = {
   github: "https://github.com/Bulletproofsidd",
-  linkedin: "www.linkedin.com/in/siddhesh-kulkarni-161107233", // <-- replace
-  email: "siddheshtkulkarni55@gmail.com",                  // <-- replace
+  linkedin: "https://www.linkedin.com/in/siddhesh-kulkarni-161107233/",
+  email: "siddheshtkulkarni55@gmail.com",
 };
 
 const STACK = [
@@ -39,7 +39,8 @@ const PROJECTS = [
     blurb:
       "An Android app that intervenes on doomscrolling using UsageStatsManager and a rule-based risk engine, backed by a Node/Express + Socket.io service. Roadmap includes a real-time web dashboard and group focus sessions.",
     stack: ["Android", "Node.js", "Express", "Socket.io", "MongoDB", "JWT"],
-    github: In-Progress,
+    github: null,
+    live: null,
   },
   {
     tag: "e-commerce",
@@ -48,6 +49,7 @@ const PROJECTS = [
       "A complete MERN storefront — auth, sessions, and password hashing built from scratch, product catalog and checkout flow wired end-to-end on MongoDB.",
     stack: ["React", "Node.js", "Express", "MongoDB", "JWT", "bcrypt"],
     github: "https://github.com/Bulletproofsidd/furni-ecommerce",
+    live: null,
   },
 ];
 
@@ -150,8 +152,8 @@ function useReveal() {
 export default function Portfolio() {
   const [theme, setTheme] = useState("light");
   useEffect(() => {
-  document.body.style.background = theme === "dark" ? "#0e1116" : "#ffffff";
-}, [theme]);
+    document.body.style.background = theme === "dark" ? "#0e1116" : "#ffffff";
+  }, [theme]);
   const [heroRef, heroIn] = useReveal();
   const [visualRef, visualIn] = useReveal();
   const [floatRef, floatIn] = useReveal();
@@ -579,10 +581,10 @@ export default function Portfolio() {
           <div className="about-eyebrow" style={{ justifyContent: "center", display: "flex" }}>• CONNECT</div>
           <h2>Want to build something real-time together?</h2>
           <p>Startup roles, backend-heavy projects, or just talking systems design — my inbox is open.</p>
-          <a className="connect-email" href={mailto:${`siddheshtkulkarni55@gmail.com`}}><Mail size={18} /> Email Me</a>
+          <a className="connect-email" href={`mailto:${LINKS.email}`}><Mail size={18} /> Email Me</a>
           <div className="connect-row">
-            <a className="icon-btn" href={`https://github.com/Bulletproofsidd`} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={17} /></a>
-            <a className="icon-btn" href={`https://www.linkedin.com/in/siddhesh-kulkarni-161107233/`} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={17} /></a>
+            <a className="icon-btn" href={LINKS.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={17} /></a>
+            <a className="icon-btn" href={LINKS.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={17} /></a>
           </div>
         </div>
       </section>

@@ -49,7 +49,7 @@ const PROJECTS = [
       "A complete MERN storefront — auth, sessions, and password hashing built from scratch, product catalog and checkout flow wired end-to-end on MongoDB.",
     stack: ["React", "Node.js", "Express", "MongoDB", "JWT", "bcrypt"],
     github: "https://github.com/Bulletproofsidd/furni-ecommerce",
-    live: null,
+    
   },
 ];
 

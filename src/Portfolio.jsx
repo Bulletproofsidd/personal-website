@@ -105,12 +105,12 @@ function ProjectCards() {
               </div>
               <div className="card-links">
                 {p.github && (
-                  <a href={p.github} target="_blank" rel="noreferrer" className="card-link">
+                  <a href={p.github} target="_blank" rel="noopener noreferrer" className="card-link">
                     <Github size={15} /> repo
                   </a>
                 )}
                 {p.live && (
-                  <a href={p.live} target="_blank" rel="noreferrer" className="card-link">
+                  <a href={p.live} target="_blank" rel="noopener noreferrer" className="card-link">
                     <ArrowUpRight size={15} /> live
                   </a>
                 )}
@@ -152,7 +152,9 @@ function useReveal() {
 export default function Portfolio() {
   const [theme, setTheme] = useState("light");
   useEffect(() => {
-    document.body.style.background = theme === "dark" ? "#0e1116" : "#ffffff";
+    const bg = theme === "dark" ? "#0e1116" : "#ffffff";
+    document.body.style.background = bg;
+    document.documentElement.style.background = bg;
   }, [theme]);
   const [heroRef, heroIn] = useReveal();
   const [visualRef, visualIn] = useReveal();
@@ -167,7 +169,20 @@ export default function Portfolio() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
-        html { scroll-behavior: smooth; }
+        html {
+          scroll-behavior: smooth;
+          background: #ffffff;
+        }
+        html:has(.root[data-theme="dark"]) {
+          background: #0e1116;
+        }
+        body {
+          margin: 0;
+          background: #ffffff;
+        }
+        body:has(.root[data-theme="dark"]) {
+          background: #0e1116;
+        }
         section[id] { scroll-margin-top: 84px; }
 
         * { box-sizing: border-box; }
@@ -388,7 +403,15 @@ export default function Portfolio() {
         .card-title { font-size: 22px; margin-top: 8px; margin-bottom: 10px; }
         .card-blurb { font-size: 14px; color: var(--muted); line-height: 1.6; min-height: 84px; }
         .card-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
-        .card-links { display: flex; gap: 16px; margin-top: 18px; }
+        .card-links {
+           display: flex; gap: 16px; margin-top: 18px;
+           position: relative; z-index: 20;
+         }
+         .card-link {
+           position: relative;
+           z-index: 21;
+           pointer-events: auto;
+         }
         .card-link { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--blue-a); font-weight: 600; }
         .card-link.muted { color: var(--muted); font-weight: 400; }
         .stage-controls { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 10px; }
@@ -448,8 +471,8 @@ export default function Portfolio() {
           <button className="icon-btn" onClick={() => setTheme(theme === "light" ? "dark" : "light")} aria-label="toggle theme">
             {theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
           </button>
-          <a className="icon-btn" href={LINKS.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={16} /></a>
-          <a className="icon-btn" href={LINKS.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={16} /></a>
+          <a className="icon-btn" href={LINKS.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github size={16} /></a>
+          <a className="icon-btn" href={LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={16} /></a>
           <a className="pill" href={`mailto:${LINKS.email}`}>SAY HI <ArrowUpRight size={14} /></a>
         </div>
       </nav>
@@ -583,8 +606,8 @@ export default function Portfolio() {
           <p>Startup roles, backend-heavy projects, or just talking systems design — my inbox is open.</p>
           <a className="connect-email" href={`mailto:${LINKS.email}`}><Mail size={18} /> Email Me</a>
           <div className="connect-row">
-            <a className="icon-btn" href={LINKS.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={17} /></a>
-            <a className="icon-btn" href={LINKS.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={17} /></a>
+            <a className="icon-btn" href={LINKS.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github size={17} /></a>
+            <a className="icon-btn" href={LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={17} /></a>
           </div>
         </div>
       </section>

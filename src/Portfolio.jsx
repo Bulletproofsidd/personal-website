@@ -149,6 +149,9 @@ function useReveal() {
 
 export default function Portfolio() {
   const [theme, setTheme] = useState("light");
+  useEffect(() => {
+  document.body.style.background = theme === "dark" ? "#0e1116" : "#ffffff";
+}, [theme]);
   const [heroRef, heroIn] = useReveal();
   const [visualRef, visualIn] = useReveal();
   const [floatRef, floatIn] = useReveal();
@@ -576,7 +579,7 @@ export default function Portfolio() {
           <div className="about-eyebrow" style={{ justifyContent: "center", display: "flex" }}>• CONNECT</div>
           <h2>Want to build something real-time together?</h2>
           <p>Startup roles, backend-heavy projects, or just talking systems design — my inbox is open.</p>
-          <a className="connect-email" href={`mailto:${siddheshtkulkarni55@gmail.com}`}><Mail size={18} /> Email Me</a>
+          <a className="connect-email" href={mailto:${`siddheshtkulkarni55@gmail.com`}}><Mail size={18} /> Email Me</a>
           <div className="connect-row">
             <a className="icon-btn" href={`https://github.com/Bulletproofsidd`} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={17} /></a>
             <a className="icon-btn" href={`https://www.linkedin.com/in/siddhesh-kulkarni-161107233/`} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={17} /></a>

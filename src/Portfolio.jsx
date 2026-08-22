@@ -9,7 +9,7 @@ import {
    ============================================================ */
 const LINKS = {
   github: "https://github.com/Bulletproofsidd",
-  linkedin: "https://www.linkedin.com/in/siddhesh-kulkarni-161107233/", // <-- replace
+  linkedin: "www.linkedin.com/in/siddhesh-kulkarni-161107233", // <-- replace
   email: "siddheshtkulkarni55@gmail.com",                  // <-- replace
 };
 
